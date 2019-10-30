@@ -59,3 +59,27 @@ img{
   width: 300px;
   max-width: 100%;
 }
+
+input{
+  background: #1f1f1f;
+  border: none;
+  border-bottom: 2px solid white;
+  padding: 10px 16px 14px 21px;
+  font-size: 1.2rem;
+  color: aliceblue;
+  outline: none;
+}
+
+button{
+  margin-bottom: 2%;
+  flex: 1 1 auto;
+  margin-bottom: 10px;
+  padding: 13px 25px ;
+  text-align: center;
+  outline: none;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+}

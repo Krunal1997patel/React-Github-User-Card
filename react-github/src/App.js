@@ -15,9 +15,10 @@ class App extends React.Component{
     }
   }
 
+
   componentDidMount(){
     axios
-    .get(`https://api.github.com/users/krunal1997patel`)
+    .get(`https://api.github.com/users/Krunal1997patel`)
     .then(resp => {
       this.setState({
         myGithubInfo: resp.data,
@@ -27,7 +28,7 @@ class App extends React.Component{
     .catch(err => console.log(err));
 
     axios
-      .get(`https://api.github.com/users/krunal1997patel/followers`)
+      .get(`https://api.github.com/users/Krunal1997patel/followers`)
       .then(res => {
           this.setState({
             followers: res.data
@@ -36,14 +37,50 @@ class App extends React.Component{
       .catch(err => console.log(err));
   }
 
+  handleChanges = e => {
+    this.setState({
+      name: e.target.value
+    });
+  };
+
+  newUser = () => {
+    axios
+    .get(`https://api.github.com/users/${this.state.name}`)
+    .then(resp => {
+      this.setState({
+        myGithubInfo: resp.data,
+      })
+      
+    })
+    .catch(err => console.log(err));
+
+    axios
+      .get(`https://api.github.com/users/${this.state.name}/followers`)
+      .then(res => {
+          this.setState({
+            followers: res.data
+          })
+      })
+      .catch(err => console.log(err));
+  };
+
+
 
   render(){
     // console.log(this.state.name)
     return (
       <div className="App">
-       <h1 className='title'>My Github follower's</h1>
+
+      <h1 className='title'>My Github follower's</h1>
+
+      <input type="text" value={this.state.name} placeholder='Username' onChange={this.handleChanges} />
+      <br/>
+      <button onClick={this.newUser}>Search</button>
+
        <UserGithub myGithubInfo={this.state.myGithubInfo}  />
-          <h2>Followers</h2>
+
+        <h2>Followers</h2>
+
         <div className='small-card'>
           {
             this.state.followers.map(follower => (
@@ -55,6 +92,7 @@ class App extends React.Component{
             ))
           }
         </div>
+
       </div>
     );
   }

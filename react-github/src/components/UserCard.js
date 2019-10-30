@@ -16,7 +16,7 @@ class UserCard extends React.Component{
                 <div className='follow-following'>
                     <div className=''>
                         <h4>
-                            <h5>Followers</h5>
+                            <p>Followers</p>
                             <span>
                                 {data.followers}
                             </span>
@@ -24,7 +24,7 @@ class UserCard extends React.Component{
                     </div>
                     <div>
                         <h4>
-                        <h5>Following</h5>
+                        <p>Following</p>
                             <span>
                                 {data.following}
                             </span>
