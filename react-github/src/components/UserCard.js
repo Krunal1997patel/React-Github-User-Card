@@ -7,14 +7,30 @@ class UserCard extends React.Component{
         const data = this.props;
 
         return(
-            <div key={data.id}>
+            <div className='user-card' key={data.id}>
                 <h1>{data.name}</h1>
-                <h2>{data.nickName}</h2>
                 <img src={data.img} alt='User profil image'/>
-                <p>{data.bio}</p>
-                <p>{data.location}</p>
-                <h4>{data.followers}</h4>
-                <h4>{data.following}</h4>
+                <h2><span>Username</span> : {data.nickName}</h2>
+                <p><span>Bio</span> : {data.bio}</p>
+                <p><span>Location</span> : {data.location}</p>
+                <div className='follow-following'>
+                    <div className=''>
+                        <h4>
+                            <h5>Followers</h5>
+                            <span>
+                                {data.followers}
+                            </span>
+                        </h4>
+                    </div>
+                    <div>
+                        <h4>
+                        <h5>Following</h5>
+                            <span>
+                                {data.following}
+                            </span>
+                        </h4>
+                    </div>
+                </div>
             </div>
         )
     }

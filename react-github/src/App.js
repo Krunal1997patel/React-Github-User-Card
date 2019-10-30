@@ -10,7 +10,8 @@ class App extends React.Component{
     super();
     this.state = {
       myGithubInfo: [],
-      followers: []
+      followers: [],
+      name: ''
     }
   }
 
@@ -19,7 +20,7 @@ class App extends React.Component{
     .get(`https://api.github.com/users/krunal1997patel`)
     .then(resp => {
       this.setState({
-        myGithubInfo: resp.data
+        myGithubInfo: resp.data,
       })
       
     })
@@ -37,12 +38,13 @@ class App extends React.Component{
 
 
   render(){
-    console.log(this.state.followers)
+    // console.log(this.state.name)
     return (
       <div className="App">
-       <h1>My Github follower's</h1>
+       <h1 className='title'>My Github follower's</h1>
        <UserGithub myGithubInfo={this.state.myGithubInfo}  />
-        <div>
+          <h2>Followers</h2>
+        <div className='small-card'>
           {
             this.state.followers.map(follower => (
               <FollowerCard
