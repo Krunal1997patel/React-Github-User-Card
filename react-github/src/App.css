@@ -1,0 +1,85 @@
+.App {
+  text-align: center;
+}
+
+body{
+  background-color: #1f1f1f;
+  color: white;
+  font-family: sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.title{
+  font-size: 3rem;
+}
+
+.user-card{
+  border: 10px solid;
+  border-image-source: linear-gradient(45deg, rgb(183, 49, 216), rgb(197, 29, 60));
+  border-image-slice: 1;
+}
+
+span{
+  background-color: white;
+  padding: 2px 7px 3px 7px;
+  color: #1f1f1f;
+  border-radius: 16px;
+}
+
+h5{
+  margin: 10%;
+}
+
+h4{
+  font-size: 2rem;
+}
+
+.follow-following{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.small-card{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 3% 0;
+}
+
+.one-card{
+  border: 2px solid white;
+  border-radius: 30px;
+  margin: 1%;
+}
+
+img{
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  width: 300px;
+  max-width: 100%;
+}
+
+input{
+  background: #1f1f1f;
+  border: none;
+  border-bottom: 2px solid white;
+  padding: 10px 16px 14px 21px;
+  font-size: 1.2rem;
+  color: aliceblue;
+  outline: none;
+}
+
+button{
+  margin-bottom: 2%;
+  flex: 1 1 auto;
+  margin-bottom: 10px;
+  padding: 13px 25px ;
+  text-align: center;
+  outline: none;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+}
